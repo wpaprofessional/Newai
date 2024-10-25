@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newai (Brasil)</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="./assets/favicon-32x32.png" alt="Logo Newai"></a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produto.html">Produto</a></li>
+                <li><a href="planos.html">Planos</a></li>
+                <li><a href="parceiros.html">Parceiros</a></li>
+                <li><a href="leadership.html">Equipe</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li>
+                    <a href="javascript:void(0);" id="icone-pesquisa" onclick="abrirPesquisa()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                            <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+                        </svg>
+                    </a>
+
+                    <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
+                        name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
+                        style="display:none;">
+                    <datalist id="sugestoes">
+                        <option value="Início">
+                        <option value="Produto">
+                        <option value="Planos">
+                        <option value="Parceiros">
+                        <option value="Equipe">
+                        <option value="Suporte">
+                        <option value="Sobre">
+                    </datalist>
+                </li>
+
+                <script>
+                    function abrirPesquisa() {
+                        // Esconde o ícone de pesquisa
+                        document.getElementById('icone-pesquisa').style.display = 'none';
+
+                        // Mostra o campo de pesquisa
+                        document.getElementById('campo-pesquisa').style.display = 'inline-block';
+
+                        // Foca no campo de pesquisa
+                        document.getElementById('campo-pesquisa').focus();
+                    }
+
+                    // Função já existente que verifica a sugestão e redireciona
+                    function verificarSugestao() {
+                        const campoPesquisa = document.getElementById('campo-pesquisa').value;
+
+                        // Lista de páginas e URLs
+                        const paginas = {
+                            "Início": "index.html",
+                            "Produto": "produto.html",
+                            "Planos": "planos.html",
+                            "Parceiros": "parceiros.html",
+                            "Equipe": "leadership.html",
+                            "Suporte": "suporte.html",
+                            "Sobre": "sobre.html"
+                        };
+
+                        // Se a pesquisa corresponder a uma das páginas, redireciona automaticamente
+                        if (paginas[campoPesquisa]) {
+                            window.location.href = paginas[campoPesquisa];
+                        }
+                    }
+                </script>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="interface">
+                <div class="flex">
+                    <div class="inovacao-text inline">
+                        <h1 class="inovacao-h1">Newai.<span class="inovacao-span">Fazendo a <br>diferença no
+                                mundo!</span>
+                        </h1>
+                    </div>
+                    <div class="inovacao-text inovacao-div">
+                        <div class="ajuda">
+                            <img class="ajuda-img" src="./assets/suporte.jpeg" alt="">
+                            <div>
+                                <h1 class="ajuda-h1">Precisa de ajuda para comprar?</h1>
+                                <a class="ajuda-a" href="suporte.html#formulario">Fale com nosso suporte</a>
+                            </div>
+                        </div>
+                        <div class="visita">
+                            <img class="visita-img" src="./assets/local.svg" alt="">
+                            <div>
+                                <h1 class="visita-h1">Visite a Newai</h1>
+                                <a class="visita-a" href="#" onclick="encontrarLoja()">Encontre uma Loja Newai</a>
+
+                                <script>
+                                    function encontrarLoja() {
+                                        alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/iphonepro.jpg">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h1 class="footer-h1">Outras formas de comprar: <a href="#" onclick="encontrarLoja()">encontre uma loja
+                        newai</a>
+
+                    <script>
+                        function encontrarLoja() {
+                            alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                        }
+                    </script>.
+                </h1>
+            </div>
+            <hr>
+            <div>
+                <div>Copyright © 2024 Newai Inc. Todos os direitos reservados. Newai Company Ltda.</div>
+                <div class="flex">
+                    <a class="flex-h1 margin" href="./pdf/Politica de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Politica de Privacidade</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank" rel="noopener noreferrer">Politica de Venda</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos Legais</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
