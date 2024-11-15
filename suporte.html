@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Cabeça -->
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo -->
+    <title>Newai (Brasil)</title>
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/global-mobile.css">
+    <link rel="stylesheet" href="./style/botwai.css">
+    <link rel="stylesheet" href="./style/add-ons/suporte.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+</head>
+
+<!-- Corpo -->
+
+<body>
+
+    <!-- VLibras -->
+    <div class="vlibra">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script class="vlibras" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+
+    <!-- Botwai -->
+    <div class="chat-container">
+        <button id="support-btn" onclick="toggleChat()">Suporte</button>
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header">
+                <span>BotWai</span>
+                <div class="header-buttons">
+                    <button onmouseover="showPopup('popup-reiniciar')" onmouseout="hidePopup('popup-reiniciar')"
+                        onclick="clearChat(); restartChat()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                            <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-reiniciar">Reiniciar</span>
+                    </button>
+
+                    <button onmouseover="showPopup('popup-fechar')" onmouseout="hidePopup('popup-fechar')"
+                        onclick="toggleChat()">
+                        <svg fill="#000000" height="20px" width="15px" version="1.1" id="Capa_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 460.775 460.775" xml:space="preserve">
+                            <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                               c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                               c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                               c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                               l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                               c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-fechar">Fechar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <div class="bot-message">
+                    <img src="./assets/botwai.png" alt="">
+                    <p>Oi! Sou BotWay🤖, o especialista de atendimento Newai. Como posso te ajudar hoje?</p>
+                </div>
+                <div id="faq-buttons">
+                    <h1>Perguntas frequentes:</h1>
+                    <button onclick="sendFAQ('produto', 'O que vocês vendem?')">O que vocês vendem?</button>
+                    <button onclick="sendFAQ('contato', 'Como entrar em contato?')">Como entrar em contato?</button>
+                    <button onclick="sendFAQ('planos', 'Quais são os planos?')">Quais são os planos?</button>
+                </div>
+            </div>
+            <div id="loading" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="40"
+                    height="40" style="shape-rendering: auto; display: block; background: transparent;"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <circle stroke-dasharray="47.12388980384689 17.707963267948966" r="10" stroke-width="6"
+                            stroke="#cccccc" fill="none" cy="50" cx="50">
+                            <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="1s"
+                                repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+                        </circle>
+                        <g></g>
+                    </g>
+                </svg>
+            </div>
+            <div class="chat-footer">
+                <div class="input-container">
+                    <input type="text" id="chat-input" placeholder="Escreva sua mensagem..."
+                        onkeypress="handleEnter(event)">
+                    <button onclick="sendMessage()" id="send-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="send">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path
+                                d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-h1">
+                <h1>O BotWai pode produzir informações imprecisas</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="index.html"><img src="./assets/icone-newai-escuro.png" alt="Logo Newai"></a>
+                </li>
+                <li class="menu-item"><a href="index.html">Início</a></li>
+                <li class="menu-item"><a href="produto.html">Produto</a></li>
+                <li class="menu-item"><a href="planos.html">Planos</a></li>
+                <li class="menu-item"><a href="parceiros.html">Parceiros</a></li>
+                <li class="menu-item"><a href="leadership.html">Equipe</a></li>
+                <li class="menu-item"><a href="suporte.html">Suporte</a></li>
+                <li class="menu-item"><a href="sobre.html">Sobre</a></li>
+                <li class="search">
+                    <a href="javascript:void(0);" id="icone-pesquisa" onclick="abrirPesquisa()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                            <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+                        </svg>
+                    </a>
+
+                    <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
+                        name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
+                        style="display:none;">
+                    <datalist id="sugestoes">
+                        <option value="Início">
+                        <option value="Produto">
+                        <option value="Planos">
+                        <option value="Parceiros">
+                        <option value="Equipe">
+                        <option value="Suporte">
+                        <option value="Sobre">
+                    </datalist>
+                </li>
+                <div class="right-icons">
+                    <li class="hamburguer" onclick="toggleMenu()"><svg width="18" height="18" viewBox="0 0 18 18">
+                            <polyline id="globalnav-menutrigger-bread-bottom"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 12, 16 12">
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
+                            </polyline>
+                            <polyline id="globalnav-menutrigger-bread-top"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 5, 16 5">
+                                <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
+                            </polyline>
+                        </svg>
+                    </li>
+                    <li class="close-button" onclick="toggleMenu()">
+                        <svg width="15" height="15" viewBox="0 0 18 18">
+                            <!-- Ícone de fechar (X) -->
+                            <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" />
+                            <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Corpo -->
+    <main>
+        <section>
+            <div class="interface">
+                <div class="div-banner">
+                    <img src="./assets/banner-suporte.png">
+                </div>
+            </div>
+        </section>
+        <section class="suport">
+            <div class="interface">
+                <h1 class="title-h1">Suporte Newai</h1>
+                <div class="card-grid">
+                    <div class="card-suport">
+                        <a href="#formulario">
+                            <div>
+                                <svg height="120" viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <mask id="a" fill="#fff">
+                                        <path d="m0 0h120v120h-120z" fill="#fff" fill-rule="evenodd" />
+                                    </mask>
+                                    <g fill="none" mask="url(#a)">
+                                        <g transform="translate(14.262857 30.034286)">
+                                            <path
+                                                d="m16.7424891 42.227532c2.1771369 0 3.9556431-1.7951503 3.9556431-3.9617111 0-2.1975116-1.7785062-3.9617111-3.9556431-3.9617111-2.1771368 0-3.9249791 1.7641995-3.9249791 3.9617111 0 2.1665608 1.7478423 3.9617111 3.9249791 3.9617111zm12.3268876 0c2.1771369 0 3.9556431-1.7951503 3.9556431-3.9617111 0-2.1975116-1.7785062-3.9617111-3.9556431-3.9617111-2.2078007 0-3.955643 1.7641995-3.955643 3.9617111 0 2.1665608 1.7478423 3.9617111 3.955643 3.9617111zm12.2962237 0c2.146473 0 3.9249792-1.7951503 3.9249792-3.9617111 0-2.1975116-1.7785062-3.9617111-3.9249792-3.9617111-2.1771368 0-3.955643 1.7641995-3.955643 3.9617111 0 2.1665608 1.7785062 3.9617111 3.955643 3.9617111z"
+                                                fill="#8e8e93" />
+                                            <path
+                                                d="m69.3310768 59.9314286c5.795477 0 8.9538586-3.064136 8.9538586-8.91385v-25.6273188l-4.9368878 4.9830898v20.8918359c0 2.5689221-1.4412033 4.0236129-3.9863069 4.0236129h-60.43854594c-2.54510366 0-3.98630694-1.4546908-3.98630694-4.0236129v-26.02968c0-2.5689221 1.44120328-4.0236129 3.98630694-4.0236129h49.64485334l4.6302488-4.6426302h-54.21377434c-5.79547701 0-8.98452256 3.064136-8.98452256 8.91385v25.5344662c0 5.849714 3.18904555 8.91385 8.98452256 8.91385z"
+                                                fill="#c7c7cc" />
+                                            <path
+                                                d="m88.3426945 7.50065807 2.2997924-2.35226597c1.1039004-1.14518212 1.1039004-2.66177466.0306639-3.71410417l-.7359335-.74282084c-.9812448-.99042777-2.5144398-.89757517-3.5570124.15475435l-2.2997924 2.29036423z"
+                                                fill="#8e8e93" />
+                                            <path
+                                                d="m53.109874 39.5657574 6.2554354-2.816529 26.7082565-26.92725523-4.2929459-4.30217066-26.6775926 26.92725519-2.9437343 6.097321c-.2453112.5261648.3679668 1.2689856.9505809 1.0213787z"
+                                                fill="#3478f6" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <h1>Senha de Acesso</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-suport">
+                        <a href="#formulario">
+                            <div>
+                                <svg height="120" viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <mask id="a" fill="#fff">
+                                        <path d="m0 0h120v120h-120z" fill="#fff" fill-rule="evenodd" />
+                                    </mask>
+                                    <g fill="none" fill-rule="evenodd" mask="url(#a)">
+                                        <g
+                                            transform="matrix(.70710678 .70710678 -.70710678 .70710678 77.40687 -8.680891)">
+                                            <path
+                                                d="m19.1355987 48.2788364 32.19195-36.7882033-11.5295844-11.4906331-36.82715455 32.19195c-3.77827597 3.3498117-3.97303246 6.8554286-.46741558 10.3610455l6.23220779 6.1932564c3.46666554 3.4666656 7.05018504 3.2719091 10.39999674-.4674155z"
+                                                fill="#e94f3d" fill-rule="nonzero"
+                                                transform="matrix(.70710678 -.70710678 .70710678 .70710678 0 85.528121)" />
+                                            <path d="m32.1836763 65.3016535v-41.3699756h7.9772259v41.3699756z"
+                                                fill="#c7c7cc" />
+                                            <rect fill="#e94f3d" height="10.636301" rx="5.318151" width="28.36347"
+                                                x="21.547375" y="57.17012" />
+                                            <path
+                                                d="m33.2419518 0h5.8606707c.6282529-.00000215 1.1813108.41415145 1.3581151 1.01701298 2.4591851 8.38525107 3.6887776 13.70228142 3.6887776 15.95109092 0 2.3384193-1.3295376 5.1027899-3.988613 8.2931117h-7.9772259c-2.6590754-3.1903218-3.988613-5.9546924-3.988613-8.2931117 0-2.2488089 1.2295918-7.56583679 3.6887755-15.95108368.1767984-.6028653.7298581-1.01702022 1.358113-1.01702022z"
+                                                fill="#c7c7cc" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <h1>Reparo/Manutenção</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-suport">
+                        <a href="#formulario">
+                            <div>
+                                <svg height="120" viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <mask id="a" fill="#fff">
+                                        <path d="m0 0h120v120h-120z" fill="#fff" fill-rule="evenodd" />
+                                    </mask>
+                                    <path
+                                        d="m81.427891 14c6.6267408 0 11.9987757 5.3720348 11.9987757 11.9987756v68.0024488c0 6.6267406-5.3720349 11.9987756-11.9987757 11.9987756h-42.855782c-6.6267408 0-11.9987757-5.372035-11.9987757-11.9987756v-68.0024488c0-6.6267408 5.3720349-11.9987756 11.9987757-11.9987756zm-3.3387817 77.2766208h-16.5583104c-1.0886788 0-1.9712274.8825485-1.9712274 1.9712274 0 1.0886788.8825486 1.9712274 1.9712274 1.9712274h16.5583104c1.0886788 0 1.9712274-.8825486 1.9712274-1.9712274 0-1.0886789-.8825486-1.9712274-1.9712274-1.9712274zm-13.4043465-11.0388736h-26.020202c-1.0886789 0-1.9712275.8825485-1.9712275 1.9712274 0 1.0886788.8825486 1.9712274 1.9712275 1.9712274h26.020202c1.0886788 0 1.9712274-.8825486 1.9712274-1.9712274 0-1.0886789-.8825486-1.9712274-1.9712274-1.9712274zm13.4043465 0h-5.5194368c-1.0886789 0-1.9712274.8825485-1.9712274 1.9712274 0 1.0886788.8825485 1.9712274 1.9712274 1.9712274h5.5194368c1.0886788 0 1.9712274-.8825486 1.9712274-1.9712274 0-1.0886789-.8825486-1.9712274-1.9712274-1.9712274zm-13.4043465-11.0388736h-26.020202c-1.0886789 0-1.9712275.8825486-1.9712275 1.9712274 0 1.0886789.8825486 1.9712274 1.9712275 1.9712274h26.020202c1.0886788 0 1.9712274-.8825485 1.9712274-1.9712274 0-1.0886788-.8825486-1.9712274-1.9712274-1.9712274zm13.4043465 0h-5.5194368c-1.0886789 0-1.9712274.8825486-1.9712274 1.9712274 0 1.0886789.8825485 1.9712274 1.9712274 1.9712274h5.5194368c1.0886788 0 1.9712274-.8825485 1.9712274-1.9712274 0-1.0886788-.8825486-1.9712274-1.9712274-1.9712274zm-13.4043465-11.0388736h-26.020202c-1.0886789 0-1.9712275.8825486-1.9712275 1.9712274 0 1.0886789.8825486 1.9712275 1.9712275 1.9712275h26.020202c1.0886788 0 1.9712274-.8825486 1.9712274-1.9712275 0-1.0886788-.8825486-1.9712274-1.9712274-1.9712274zm13.4043465 0h-5.5194368c-1.0886789 0-1.9712274.8825486-1.9712274 1.9712274 0 1.0886789.8825485 1.9712275 1.9712274 1.9712275h5.5194368c1.0886788 0 1.9712274-.8825486 1.9712274-1.9712275 0-1.0886788-.8825486-1.9712274-1.9712274-1.9712274zm-14.1207924-28.3198326c-1.9296857 0-3.634682 1.0626917-4.5466568 1.0626917-.9516258 0-2.3394135-1.1151703-3.8990226-1.0626917-2.0354219.039359-3.8990225 1.2332471-4.9431675 2.9912803-.7401535 1.2594864-1.030928 2.7420068-1.004494 4.2507666.0396511 2.8469641 1.1630983 5.812005 2.4848008 7.7012346 1.017711 1.4431615 2.1675922 2.9912802 3.7932864 2.9912802 1.4670898 0 2.0089879-.9708541 3.9254566-.9708541 1.7842985 0 2.3394135.9708541 3.8858055.9708541 1.6256942 0 2.6962733-1.4694008 3.6611161-2.925682 1.2159664-1.6924348 1.6256942-3.3061518 1.6785623-3.37175-.0528681 0-3.1192181-1.2332471-3.2381713-4.7493134 0-3.0831177 2.5244519-4.4738006 2.6301881-4.5393989-1.3745707-2.099144-3.595031-2.3484174-4.4277036-2.3484174zm.1189532-5.7201674c-1.2424004 0-2.6830562.7215808-3.5950309 1.7842724-.7137194.8790166-1.4803069 2.2565798-1.2027494 3.6341431 1.2820515.1574358 2.6698392-.6428629 3.4628608-1.7055545.9119747-.9839738 1.4142217-2.3352977 1.3349195-3.712861z"
+                                        fill="#77c5f5" fill-rule="evenodd" mask="url(#a)" />
+                                </svg>
+                                <h1>Cobrança/Planos</h1>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-color">
+            <section class="obter-suport">
+                <div class="full">
+                    <div class="obter-img">
+                        <img src="./assets/banner-obter-suporte.png" alt="">
+                    </div>
+                    <div class="obter-text">
+                        <div class="button">
+                            <button>
+                                <a href="#formulario" class="scroll-link">Começar agora</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="suport">
+                <div class="interface">
+                    <div class="box max">
+                        <div class="text-center">
+                            <h1>Meu Suporte</h1>
+                            <p>Logo abaixo, você encontrará o espaço destinado para preencher as informações essenciais
+                                que permitirão à nossa equipe fornecer o suporte adequado e resolver o seu problema com
+                                a maior eficiência possível. <br><br>Pedimos que você detalhe ao máximo as suas
+                                necessidades,
+                                dúvidas ou dificuldades, para que possamos entender melhor a situação e oferecer uma
+                                solução personalizada e precisa. <br><br>Estamos aqui para garantir que seu atendimento
+                                seja
+                                ágil, eficaz e que você saia com a melhor experiência possível. Por favor, reserve um
+                                momento para nos fornecer esses dados, e logo em seguida estaremos prontos para
+                                auxiliá-lo da melhor forma!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="formulario" class="formulario">
+                <div class="interface">
+                    <h1>Formulário</h1>
+                    <form class="form-conteudo">
+                        <input class="form-box" type="text" id="nome" name="firstname" placeholder="Nome">
+                        <input class="form-box" type="email" id="email" name="firstname" placeholder="Email">
+                        <input class="form-box" type="tel" id="telefone" name="firstname" placeholder="Telefone">
+                        <input class="form-box" type="text" id="assunto" name="firstname" placeholder="Assunto">
+                        <input class="form-box box-maior" type="text" id="descricao" name="firstname"
+                            placeholder="Descreva sua dúvida/problema">
+                        <div class="input-enviar">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <script src="./script/formulario.js"></script>
+        </section>
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <div class="footer">
+            <div>
+                <h1 class="footer-h1">Outras formas de comprar: <a href="#" onclick="encontrarLoja()">encontre uma loja
+                        newai</a>
+
+                    <script>
+                        function encontrarLoja() {
+                            alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                        }
+                    </script>.
+                </h1>
+            </div>
+            <hr class="hr">
+            <div>
+                <div>Copyright © 2024 Newai Inc. Todos os direitos reservados. Newai Company Ltda.</div>
+                <div class="flex">
+                    <a class="flex-h1 margin" href="./pdf/Politica de Privacidade.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Privacidade</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Venda</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                        Legais</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Links JS -->
+    <script src="./script/botwai.js"></script>
+    <script src="./script/header-mobile.js"></script>
+    <script src="./script/search.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Cabeça -->
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo -->
+    <title>Newai (Brasil)</title>
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/global-mobile.css">
+    <link rel="stylesheet" href="./style/botwai.css">
+    <link rel="stylesheet" href="./style/add-ons/produto.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+</head>
+
+<!-- Corpo -->
+
+<body>
+
+    <!-- VLibras -->
+    <div class="vlibra">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script class="vlibras" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+
+    <!-- Botwai -->
+    <div class="chat-container">
+        <button id="support-btn" onclick="toggleChat()">Suporte</button>
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header">
+                <span>BotWai</span>
+                <div class="header-buttons">
+                    <button onmouseover="showPopup('popup-reiniciar')" onmouseout="hidePopup('popup-reiniciar')"
+                        onclick="clearChat(); restartChat()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                            <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-reiniciar">Reiniciar</span>
+                    </button>
+
+                    <button onmouseover="showPopup('popup-fechar')" onmouseout="hidePopup('popup-fechar')"
+                        onclick="toggleChat()">
+                        <svg fill="#000000" height="20px" width="15px" version="1.1" id="Capa_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 460.775 460.775" xml:space="preserve">
+                            <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                               c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                               c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                               c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                               l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                               c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-fechar">Fechar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <div class="bot-message">
+                    <img src="./assets/botwai.png" alt="">
+                    <p>Oi! Sou BotWay🤖, o especialista de atendimento Newai. Como posso te ajudar hoje?</p>
+                </div>
+                <div id="faq-buttons">
+                    <h1>Perguntas frequentes:</h1>
+                    <button onclick="sendFAQ('produto', 'O que vocês vendem?')">O que vocês vendem?</button>
+                    <button onclick="sendFAQ('contato', 'Como entrar em contato?')">Como entrar em contato?</button>
+                    <button onclick="sendFAQ('planos', 'Quais são os planos?')">Quais são os planos?</button>
+                </div>
+            </div>
+            <div id="loading" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="40"
+                    height="40" style="shape-rendering: auto; display: block; background: transparent;"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <circle stroke-dasharray="47.12388980384689 17.707963267948966" r="10" stroke-width="6"
+                            stroke="#cccccc" fill="none" cy="50" cx="50">
+                            <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="1s"
+                                repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+                        </circle>
+                        <g></g>
+                    </g>
+                </svg>
+            </div>
+            <div class="chat-footer">
+                <div class="input-container">
+                    <input type="text" id="chat-input" placeholder="Escreva sua mensagem..."
+                        onkeypress="handleEnter(event)">
+                    <button onclick="sendMessage()" id="send-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="send">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path
+                                d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-h1">
+                <h1>O BotWai pode produzir informações imprecisas</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="index.html"><img src="./assets/icone-newai-escuro.png" alt="Logo Newai"></a>
+                </li>
+                <li class="menu-item"><a href="index.html">Início</a></li>
+                <li class="menu-item"><a href="produto.html">Produto</a></li>
+                <li class="menu-item"><a href="planos.html">Planos</a></li>
+                <li class="menu-item"><a href="parceiros.html">Parceiros</a></li>
+                <li class="menu-item"><a href="leadership.html">Equipe</a></li>
+                <li class="menu-item"><a href="suporte.html">Suporte</a></li>
+                <li class="menu-item"><a href="sobre.html">Sobre</a></li>
+                <li class="search">
+                    <a href="javascript:void(0);" id="icone-pesquisa" onclick="abrirPesquisa()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                            <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+                        </svg>
+                    </a>
+
+                    <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
+                        name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
+                        style="display:none;">
+                    <datalist id="sugestoes">
+                        <option value="Início">
+                        <option value="Produto">
+                        <option value="Planos">
+                        <option value="Parceiros">
+                        <option value="Equipe">
+                        <option value="Suporte">
+                        <option value="Sobre">
+                    </datalist>
+                </li>
+                <div class="right-icons">
+                    <li class="hamburguer" onclick="toggleMenu()"><svg width="18" height="18" viewBox="0 0 18 18">
+                            <polyline id="globalnav-menutrigger-bread-bottom"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 12, 16 12">
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
+                            </polyline>
+                            <polyline id="globalnav-menutrigger-bread-top"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 5, 16 5">
+                                <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
+                            </polyline>
+                        </svg>
+                    </li>
+                    <li class="close-button" onclick="toggleMenu()">
+                        <svg width="15" height="15" viewBox="0 0 18 18">
+                            <!-- Ícone de fechar (X) -->
+                            <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" />
+                            <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Corpo -->
+    <main>
+        <section>
+            <div class="interface">
+                <div class="div-banner">
+                    <img src="./assets/banner-produto.png">
+                </div>
+            </div>
+        </section>
+        <section class="produto">
+            <div class="interface">
+                <h1 class="title">Na Newai, é diferente.<span>Ainda mais motivos para comprar com a gente.</span></h1>
+                <div class="beneficios">
+                    <a href="#instalacao">
+                        <div class="box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="56" viewBox="0 0 36 56"
+                                class="dd-glyph-svg dd-glyph-elevated" aria-hidden="true">
+                                <path d="m0 0h36v56h-36z" fill="none" />
+                                <path
+                                    d="m33.4019 16.719-13-7.1197c-.7481-.4098-1.575-.6146-2.4019-.6146s-1.6538.2048-2.4019.6146l-13 7.1197c-1.602.8774-2.5981 2.5587-2.5981 4.3854v13.7913c0 1.8267.9961 3.5079 2.5981 4.3854l13 7.1197c.748.4097 1.575.6146 2.4019.6146s1.6538-.2049 2.4019-.6146l13-7.1197c1.602-.8775 2.5981-2.5588 2.5981-4.3855v-13.7912c0-1.8267-.9961-3.508-2.5981-4.3854zm-16.8431-5.3655c.4404-.2413.939-.3688 1.4412-.3688s1.0007.1275 1.4412.3688l13 7.1196c.1169.064.21.1554.3157.2329l-6.1394 3.5058-14.8081-8.2572zm.4412 33.4669c-.1492-.0531-.3018-.0975-.4412-.1738l-13-7.1197c-.9614-.5267-1.5588-1.5349-1.5588-2.6313v-13.7912c0-.2562.0391-.506.1013-.7476l14.8987 8.5077zm-13.7568-26.1143c.1057-.0775.1987-.1689.3157-.2329l6.1782-3.3836 14.8511 8.2811-6.5882 3.7621zm30.7568 16.1895c0 1.0964-.5974 2.1046-1.5588 2.6312l-13 7.1197c-.1394.0763-.292.1208-.4412.1739v-15.9559l14.8987-8.5077c.0622.2416.1013.4913.1013.7476z" />
+                            </svg>
+                            <h2>Instalação grátis em qualquer Região</h2>
+                        </div>
+                    </a>
+                    <div id="instalacao" class="pop-up">
+                        <div>
+                            <div>
+                                <a href="#close" title="Close" class="close"><span><svg width="21" height="21"
+                                            class="as-svgicon as-svgicon-close as-svgicon-tiny as-svgicon-closetiny"
+                                            role="img" aria-hidden="true">
+                                            <path fill="none" d="M0 0h21v21H0z"></path>
+                                            <path
+                                                d="m12.12 10 4.07-4.06a1.5 1.5 0 1 0-2.11-2.12L10 7.88 5.94 3.81a1.5 1.5 0 1 0-2.12 2.12L7.88 10l-4.07 4.06a1.5 1.5 0 0 0 0 2.12 1.51 1.51 0 0 0 2.13 0L10 12.12l4.06 4.07a1.45 1.45 0 0 0 1.06.44 1.5 1.5 0 0 0 1.06-2.56Z">
+                                            </path>
+                                        </svg>
+                                    </span></a>
+                                <h1>Instalação totalmente gratuita</h1>
+                                <p>Fazemos instalação em todo o Brasil e tambem sem custo nenhum, diretamente na porta
+                                    da sua empresa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#pagamento">
+                        <div class="box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="56" viewBox="0 0 46 56"
+                                class="dd-glyph-svg dd-glyph-elevated" aria-hidden="true">
+                                <path
+                                    d="M41.0009,12H5A5,5,0,0,0,.0009,17L0,39a5,5,0,0,0,4.9991,5H41.0009A5,5,0,0,0,46,39V17A5,5,0,0,0,41.0009,12ZM5,14H41.0009A3.0032,3.0032,0,0,1,44,17l.0005,2H2l.0005-2A3.0032,3.0032,0,0,1,5,14ZM41.0009,42H4.9991a3.0032,3.0032,0,0,1-3-3V22.9577H44V39A3.0032,3.0032,0,0,1,41.0009,42ZM15,31.5737v3.8526A1.5541,1.5541,0,0,1,13.4663,37H8.5338A1.5542,1.5542,0,0,1,7,35.4263V31.5737A1.5542,1.5542,0,0,1,8.5338,30h4.9325A1.5541,1.5541,0,0,1,15,31.5737Z" />
+                            </svg>
+                            <h2>Várias opções de parcelamento.</h2>
+                        </div>
+                    </a>
+                    <div id="pagamento" class="pop-up" id="pagamento">
+                        <div>
+                            <div>
+                                <a href="#close" title="Close" class="close"><span><svg width="21" height="21"
+                                            class="as-svgicon as-svgicon-close as-svgicon-tiny as-svgicon-closetiny"
+                                            role="img" aria-hidden="true">
+                                            <path fill="none" d="M0 0h21v21H0z"></path>
+                                            <path
+                                                d="m12.12 10 4.07-4.06a1.5 1.5 0 1 0-2.11-2.12L10 7.88 5.94 3.81a1.5 1.5 0 1 0-2.12 2.12L7.88 10l-4.07 4.06a1.5 1.5 0 0 0 0 2.12 1.51 1.51 0 0 0 2.13 0L10 12.12l4.06 4.07a1.45 1.45 0 0 0 1.06.44 1.5 1.5 0 0 0 1.06-2.56Z">
+                                            </path>
+                                        </svg>
+                                    </span></a>
+                                <h1>Pague do jeito que ficar melhor.</h1>
+                                <p>Economize 10% pagando à vista com cartão de crédito. Parcele em 12x com American
+                                    Express® Membership, Visa ou Mastercard. Ou divida o valor entre dois cartões.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#atendimento">
+                        <div class="box">
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                                viewBox="0 0 24 24" width="46" height="56">
+                                <path
+                                    d="m12,10c-1.654,0-3-1.346-3-3s1.346-3,3-3,3,1.346,3,3-1.346,3-3,3Zm0-5c-1.103,0-2,.897-2,2s.897,2,2,2,2-.897,2-2-.897-2-2-2Zm5,10.5c0-2.397-2.337-4.5-5-4.5s-5,2.103-5,4.5c0,.276.224.5.5.5s.5-.224.5-.5c0-1.652,1.71-3.5,4-3.5s4,1.848,4,3.5c0,.276.224.5.5.5s.5-.224.5-.5Zm-4.996,8.163c-.356,0-.715-.126-1.001-.38l-3.897-3.283h-3.606c-1.93,0-3.5-1.57-3.5-3.5V3.5C0,1.57,1.57,0,3.5,0h17c1.93,0,3.5,1.57,3.5,3.5v13c0,1.93-1.57,3.5-3.5,3.5h-3.532l-3.985,3.295c-.275.245-.626.368-.979.368ZM3.5,1c-1.378,0-2.5,1.121-2.5,2.5v13c0,1.379,1.122,2.5,2.5,2.5h3.789c.118,0,.232.042.322.117l4.047,3.409c.199.178.484.179.675.009l4.137-3.421c.09-.073.202-.114.318-.114h3.712c1.379,0,2.5-1.121,2.5-2.5V3.5c0-1.379-1.121-2.5-2.5-2.5H3.5Z" />
+                            </svg>
+                            <h2>Tenha uma experiência <span>de compra personalizada</span> com o <span>atendimento
+                                    Newai.</span></h2>
+                        </div>
+                    </a>
+                    <div id="atendimento" class="pop-up">
+                        <div>
+                            <div>
+                                <a href="#close" title="Close" class="close"><span><svg width="21" height="21"
+                                            class="as-svgicon as-svgicon-close as-svgicon-tiny as-svgicon-closetiny"
+                                            role="img" aria-hidden="true">
+                                            <path fill="none" d="M0 0h21v21H0z"></path>
+                                            <path
+                                                d="m12.12 10 4.07-4.06a1.5 1.5 0 1 0-2.11-2.12L10 7.88 5.94 3.81a1.5 1.5 0 1 0-2.12 2.12L7.88 10l-4.07 4.06a1.5 1.5 0 0 0 0 2.12 1.51 1.51 0 0 0 2.13 0L10 12.12l4.06 4.07a1.45 1.45 0 0 0 1.06.44 1.5 1.5 0 0 0 1.06-2.56Z">
+                                            </path>
+                                        </svg>
+                                    </span></a>
+                                <h1>Obtenha suporte especializado</h1>
+                                <p>Conte com suporte disponível 24 horas por dia para solucionar qualquer problema de
+                                    forma rápida e eficiente, a qualquer momento que precisar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <div class="footer">
+            <div>
+                <h1 class="footer-h1">Outras formas de comprar: <a href="#" onclick="encontrarLoja()">encontre uma loja
+                        newai</a>
+
+                    <script>
+                        function encontrarLoja() {
+                            alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                        }
+                    </script>.
+                </h1>
+            </div>
+            <hr class="hr">
+            <div>
+                <div>Copyright © 2024 Newai Inc. Todos os direitos reservados. Newai Company Ltda.</div>
+                <div class="flex">
+                    <a class="flex-h1 margin" href="./pdf/Politica de Privacidade.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Privacidade</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Venda</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                        Legais</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Links JS -->
+    <script src="./script/botwai.js"></script>
+    <script src="./script/header-mobile.js"></script>
+    <script src="./script/search.js"></script>
+
+</body>
+
+</html>

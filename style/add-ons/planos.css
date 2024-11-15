@@ -1,0 +1,140 @@
+:root {
+    --title: #000000;
+    --header-color: #000000cc;
+    --text-light: #ccc;
+    --title-card: #fff;
+    --button: #1d1d1f;
+    --button-title: #ffffff;
+}
+
+header {
+    background-color: var(--header-color);
+}
+
+header nav ul li a {
+    color: var(--text-light);
+}
+
+header nav ul li a svg {
+    fill: var(--text-light);
+}
+
+input[type="text"] {
+    color: #fff;
+}
+
+.planos-center {
+    padding: 20px 10%;
+}
+
+.planos-title {
+    text-align: center;
+    font-size: 54px;
+    color: var(--title);
+    margin-bottom: 20px;
+}
+
+.planos-title-p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.card-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-planos {
+    cursor: pointer;
+    margin-inline-end: 20px;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px #00000014;
+    box-sizing: border-box;
+    height: 29.4117647059rem;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s cubic-bezier(0, 0, .5, 1);
+    margin-top: 10px;
+}
+
+.card-planos:hover {
+    scale: 1.01;
+    box-shadow: 4px 8px 24px #00000030;
+}
+
+.card-planos img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-planos-conteudo {
+    color: var(--title-card);
+    padding: 1.7647058824rem;
+    width: 100%;
+    position: absolute;
+}
+
+.card-planos-conteudo h1 {
+    padding-bottom: 8px;
+    text-align: center;
+    font-size: 38px;
+}
+
+.card-planos-conteudo p {
+    padding-bottom: 8px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.rodape {
+    text-align: center;
+    color: var(--title-card);
+    padding: 1.7647058824rem;
+    width: 100%;
+    position: absolute;
+}
+
+.rodape h2 {
+    text-align: center;
+    margin-top: 100%;
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.rodape p {
+    text-align: center;
+    margin-top: -10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.rodape button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    min-width: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 980px;
+    border: 0;
+    background-color: var(--button);
+    margin-top: 10px;
+}
+
+.rodape button a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--button-title);
+}
+
+.rodape button:hover {
+    background-color: #313133;
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Cabeça -->
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo -->
+    <title>Newai (Brasil)</title>
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/global-mobile.css">
+    <link rel="stylesheet" href="./style/botwai.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+</head>
+
+<!-- Corpo -->
+
+<body>
+
+    <!-- VLibras -->
+    <div class="vlibra">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script class="vlibras" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+
+    <!-- Botwai -->
+    <div class="chat-container">
+        <button id="support-btn" onclick="toggleChat()">Suporte</button>
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header">
+                <span>BotWai</span>
+                <div class="header-buttons">
+                    <button onmouseover="showPopup('popup-reiniciar')" onmouseout="hidePopup('popup-reiniciar')"
+                        onclick="clearChat(); restartChat()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                            <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-reiniciar">Reiniciar</span>
+                    </button>
+
+                    <button onmouseover="showPopup('popup-fechar')" onmouseout="hidePopup('popup-fechar')"
+                        onclick="toggleChat()">
+                        <svg fill="#000000" height="20px" width="15px" version="1.1" id="Capa_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 460.775 460.775" xml:space="preserve">
+                            <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                               c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                               c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                               c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                               l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                               c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
+                        </svg>
+                        <span class="Pop-up" id="popup-fechar">Fechar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <div class="bot-message">
+                    <img src="./assets/botwai.png" alt="">
+                    <p>Oi! Sou BotWay🤖, o especialista de atendimento Newai. Como posso te ajudar hoje?</p>
+                </div>
+                <div id="faq-buttons">
+                    <h1>Perguntas frequentes:</h1>
+                    <button onclick="sendFAQ('produto', 'O que vocês vendem?')">O que vocês vendem?</button>
+                    <button onclick="sendFAQ('contato', 'Como entrar em contato?')">Como entrar em contato?</button>
+                    <button onclick="sendFAQ('planos', 'Quais são os planos?')">Quais são os planos?</button>
+                </div>
+            </div>
+            <div id="loading" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="40"
+                    height="40" style="shape-rendering: auto; display: block; background: transparent;"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <circle stroke-dasharray="47.12388980384689 17.707963267948966" r="10" stroke-width="6"
+                            stroke="#cccccc" fill="none" cy="50" cx="50">
+                            <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="1s"
+                                repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+                        </circle>
+                        <g></g>
+                    </g>
+                </svg>
+            </div>
+            <div class="chat-footer">
+                <div class="input-container">
+                    <input type="text" id="chat-input" placeholder="Escreva sua mensagem..."
+                        onkeypress="handleEnter(event)">
+                    <button onclick="sendMessage()" id="send-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="send">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path
+                                d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-h1">
+                <h1>O BotWai pode produzir informações imprecisas</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="index.html"><img src="./assets/icone-newai-escuro.png" alt="Logo Newai"></a>
+                </li>
+                <li class="menu-item"><a href="index.html">Início</a></li>
+                <li class="menu-item"><a href="produto.html">Produto</a></li>
+                <li class="menu-item"><a href="planos.html">Planos</a></li>
+                <li class="menu-item"><a href="parceiros.html">Parceiros</a></li>
+                <li class="menu-item"><a href="leadership.html">Equipe</a></li>
+                <li class="menu-item"><a href="suporte.html">Suporte</a></li>
+                <li class="menu-item"><a href="sobre.html">Sobre</a></li>
+                <li class="search">
+                    <a href="javascript:void(0);" id="icone-pesquisa" onclick="abrirPesquisa()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                            <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+                        </svg>
+                    </a>
+
+                    <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
+                        name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
+                        style="display:none;">
+                    <datalist id="sugestoes">
+                        <option value="Início">
+                        <option value="Produto">
+                        <option value="Planos">
+                        <option value="Parceiros">
+                        <option value="Equipe">
+                        <option value="Suporte">
+                        <option value="Sobre">
+                    </datalist>
+                </li>
+                <div class="right-icons">
+                    <li class="hamburguer" onclick="toggleMenu()"><svg width="18" height="18" viewBox="0 0 18 18">
+                            <polyline id="globalnav-menutrigger-bread-bottom"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 12, 16 12">
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
+                            </polyline>
+                            <polyline id="globalnav-menutrigger-bread-top"
+                                class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top" fill="none"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"
+                                points="2 5, 16 5">
+                                <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
+                                <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points"
+                                    keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline"
+                                    keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
+                                    values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
+                            </polyline>
+                        </svg>
+                    </li>
+                    <li class="close-button" onclick="toggleMenu()">
+                        <svg width="15" height="15" viewBox="0 0 18 18">
+                            <!-- Ícone de fechar (X) -->
+                            <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" />
+                            <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Corpo -->
+    <main>
+        <section class="section">
+            <div class="interface">
+                <div class="flex">
+                    <div class="inovacao-text inline">
+                        <h1 class="inovacao-h1">Newai.<span class="inovacao-span">Fazendo a <br>diferença no
+                                mundo!</span>
+                        </h1>
+                    </div>
+                    <div class="inovacao-text inovacao-div">
+                        <div class="ajuda">
+                            <img class="ajuda-img" src="./assets/suporte-icon.jpeg" alt="">
+                            <div>
+                                <h1 class="ajuda-h1">Precisa de ajuda para comprar?</h1>
+                                <a class="ajuda-a" href="suporte.html#formulario">Fale com nosso suporte</a>
+                            </div>
+                        </div>
+                        <div class="visita">
+                            <img class="visita-img" src="./assets/local.png" alt="">
+                            <div>
+                                <h1 class="visita-h1">Visite a Newai</h1>
+                                <a class="visita-a" href="#" onclick="encontrarLoja()">Encontre uma Loja Newai</a>
+
+                                <script>
+                                    function encontrarLoja() {
+                                        alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/exemplo.jpg">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <div class="footer">
+            <div>
+                <h1 class="footer-h1">Outras formas de comprar: <a href="#" onclick="encontrarLoja()">encontre uma loja
+                        newai</a>
+
+                    <script>
+                        function encontrarLoja() {
+                            alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                        }
+                    </script>.
+                </h1>
+            </div>
+            <hr class="hr">
+            <div>
+                <div>Copyright © 2024 Newai Inc. Todos os direitos reservados. Newai Company Ltda.</div>
+                <div class="flex">
+                    <a class="flex-h1 margin" href="./pdf/Politica de Privacidade.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Privacidade</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
+                        rel="noopener noreferrer">Politica de Venda</a>
+                    <hr>
+                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                        Legais</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Links JS -->
+    <script src="./script/botwai.js"></script>
+    <script src="./script/header-mobile.js"></script>
+    <script src="./script/search.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+:root {
+    --bg-primary: #ffff;
+    --title-color: #000000;
+    --header-color: #000000cc;
+    --text-light: #ccc;
+}
+
+/* Desktop */
+
+body {
+    background-color: var(--bg-primary);
+}
+
+header {
+    background-color: var(--header-color);
+}
+
+header nav ul li a {
+    color: var(--text-light);
+}
+
+header nav ul li a svg {
+    fill: var(--text-light);
+}
+
+input[type="text"] {
+    color: #fff;
+}
+
+.section-team {
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.lideranca {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.lideranca h1 {
+    font-size: 21px;
+    color: var(--title-color);
+}
+
+.hr {
+    margin-top: 10px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.perfis {
+    padding-top: 53px;
+}
+
+.perfis h1 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 33px;
+}
+
+.perfis-conteudo {
+    margin-left: 22px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfis-conteudo div {
+    margin-right: 18px;
+    margin-bottom: 28px;
+}
+
+.perfis-conteudo a {
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+
+.perfis-conteudo a:hover {
+    text-decoration: underline;
+}
+
+.perfis-conteudo h3 {
+    color: #0070c9;
+    font-size: 17px;
+}
+
+.perfis-conteudo h4 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.perfis-conteudo a h4:hover {
+    text-decoration: none;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .section-team {
+        margin-top: 70px;
+    }
+
+    .perfis-conteudo {  
+        margin-left: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .perfis-conteudo div {
+        margin-right: 0px;
+    }
+
+}
