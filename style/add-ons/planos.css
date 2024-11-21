@@ -2,10 +2,11 @@
     --title: #000000;
     --header-color: #000000cc;
     --text-light: #ccc;
-    --title-card: #fff;
-    --button: #1d1d1f;
+    --title-card: #000000;
     --button-title: #ffffff;
 }
+
+/* Desktop */
 
 header {
     background-color: var(--header-color);
@@ -23,118 +24,143 @@ input[type="text"] {
     color: #fff;
 }
 
-.planos-center {
-    padding: 20px 10%;
+/* Seção de Planos */
+.nossos-planos {
+    padding: 40px 10%;
+    text-align: center;
 }
 
-.planos-title {
-    text-align: center;
+.nossos-planos h1 {
     font-size: 54px;
-    color: var(--title);
+    margin-top: 40px;
+    margin-bottom: 68px;
+}
+
+.plano-container {
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 120px;
+    gap: 20px;
+}
+
+.plano {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#work{
+    background: #B91242;
+}
+
+#diamont {
+    margin-top: -100px;
+    background: #1C2B33;
+}
+
+#pro{
+    background: #0095C3;
+}
+
+.plano h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.flex-svg{
+    align-items: center;
+    display: flex;
+}
+
+.flex-svg h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.flex-svg svg{
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.plano p {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-.planos-title-p {
+.plano ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plano ul li {
+    margin: 10px 0;
     font-size: 16px;
-    font-weight: 300;
 }
 
-.card-center {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.plano .sublist {
+    margin-left: 20px; 
+    list-style-type: disc; 
 }
 
-.card-planos {
-    cursor: pointer;
-    margin-inline-end: 20px;
-    background-color: #fff;
-    border-radius: 18px;
-    box-shadow: 2px 4px 12px #00000014;
-    box-sizing: border-box;
-    height: 29.4117647059rem;
-    overflow: hidden;
-    position: relative;
-    transition: all .3s cubic-bezier(0, 0, .5, 1);
-    margin-top: 10px;
-}
-
-.card-planos:hover {
-    scale: 1.01;
-    box-shadow: 4px 8px 24px #00000030;
-}
-
-.card-planos img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-.card-planos-conteudo {
-    color: var(--title-card);
-    padding: 1.7647058824rem;
-    width: 100%;
-    position: absolute;
-}
-
-.card-planos-conteudo h1 {
-    padding-bottom: 8px;
-    text-align: center;
-    font-size: 38px;
-}
-
-.card-planos-conteudo p {
-    padding-bottom: 8px;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.rodape {
-    text-align: center;
-    color: var(--title-card);
-    padding: 1.7647058824rem;
-    width: 100%;
-    position: absolute;
-}
-
-.rodape h2 {
-    text-align: center;
-    margin-top: 100%;
-    font-size: 48px;
-    font-weight: 300;
-}
-
-.rodape p {
-    text-align: center;
-    margin-top: -10px;
+.plano .sublist li {
     font-size: 14px;
     font-weight: 300;
 }
 
-.rodape button {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    min-width: 28px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 980px;
-    border: 0;
-    background-color: var(--button);
-    margin-top: 10px;
+.plano .button-container {
+    margin-top: auto; /* Força o botão a ir para o final */
+    text-align: center; /* Centraliza horizontalmente */
 }
 
-.rodape button a {
+.plano .medium{
+    margin-top: 32%;
+}
+
+.plano .max{
+    margin-top: 70%;
+}
+
+.plano a {
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 300;
-    color: var(--button-title);
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.rodape button:hover {
-    background-color: #313133;
+.plano a:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .nossos-planos h1 {
+        margin-bottom: 0px;
+    }
+
+    .plano-container {
+        margin-top: 40px;
+    }
+
+    #diamont {
+        margin-top: 0;
+    }
+
 }

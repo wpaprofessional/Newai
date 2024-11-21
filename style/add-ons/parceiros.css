@@ -75,7 +75,8 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll 2s linear infinite;
+  animation: scroll 10s linear infinite;
+  margin-left: 100%;
 }
 
 .carousel-track:hover {
@@ -121,7 +122,7 @@
 
 @keyframes scroll {
   0% {
-    transform: translateX(10%);
+    transform: translateX(-50%);
   }
 
   100% {
@@ -172,7 +173,7 @@
 
 .empresa-text {
   background-color: #000000;
-  padding: 45px 60px 50px;
+  padding: 35px 35px 35px;
 }
 
 .empresa-text h1 {
@@ -213,9 +214,67 @@
   color: #000000;
 }
 
-.empresa-text button a{
-  font-weight: 300;
+.empresa-text button a {
+  color: #fff;
+  font-weight: 500;
   text-decoration: none;
 }
 
+.empresa-text button:hover a{
+  color: inherit;
+}
+
 /* Mobile */
+
+@media (max-width: 768px) {
+
+  .hamburguer svg{
+    color: #ffffff;
+  }
+
+  .parceiros-h1 {
+    margin-top: 50px;
+    font-size: 48px;
+  }
+
+  .parceiros-p {
+    font-size: 32px;
+  }
+
+  .empresa-section {
+    width: 100%;
+    padding: 40px 10%;
+  }
+
+  .historia-h1 {
+    font-size: 48px;
+  }
+
+  .historia-p {
+    font-size: 32px;
+  }
+
+  .carousel-track {
+    animation: scroll 10s linear infinite;
+  }
+  
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(-50%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .empresa-text h1 {
+    font-size: 20px;
+  }
+
+  .empresa-text p{
+    font-size: 32px;
+  }
+
+}

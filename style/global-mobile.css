@@ -10,6 +10,7 @@
     }
 
     /* Header */
+    
 
     .logo {
         display: flex;
@@ -93,6 +94,7 @@
         z-index: 9999;
         padding-top: 60px;
         animation: slideDown 0.8s ease forwards; /* Aplica a animação */
+
     }
 
     .menu.responsive.hide {

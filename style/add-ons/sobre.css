@@ -21,6 +21,10 @@ header nav ul li a svg {
     fill: var(--text-light);
 }
 
+input[type="text"] {
+    color: #fff;
+}
+
 .sobre {
     padding: 40px 10%;
 }
@@ -50,7 +54,6 @@ header nav ul li a svg {
     align-items: center;
     height: 100%;
     width: 100%;
-    cursor: pointer;
     margin-inline-end: 20px;
     transition: 0.3s;
     display: flex;
@@ -72,8 +75,8 @@ header nav ul li a svg {
     flex-grow: 0;
     flex-shrink: 0;
     overflow: hidden;
-    border-radius:
-        18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
     margin-bottom: -4px;
 }
 
@@ -112,7 +115,6 @@ header nav ul li a svg {
     align-items: center;
     height: 16.1176470588rem;
     width: 16.3rem;
-    cursor: pointer;
     margin-inline-end: 20px;
     transition: 0.3s;
 }
@@ -325,10 +327,9 @@ header nav ul li a svg {
 
     .historia-img-mobile {
         display: block;
-        min-height: 362px;
         width: 100%;
-        border-radius:
-        18px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
     }
 
     .historia-conteudo {

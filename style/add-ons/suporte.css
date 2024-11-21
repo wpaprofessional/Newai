@@ -10,6 +10,8 @@
     --button-title: #ffffff;
 }
 
+/* Desktop */
+
 body {
     background-color: var(--bg-primary);
 }
@@ -237,4 +239,27 @@ input[type=submit]:hover {
 
 .footer {
     background-color: var(--bg-section-color);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .div-banner img{
+        margin-top: 70px;
+        width: 150%;
+    }
+
+    .title-h1{
+        font-size: 32px;
+    }
+
+    .full{
+        display: none;
+    }
+
+    .form-conteudo{
+        padding: 0px 0px;
+    }
+
 }

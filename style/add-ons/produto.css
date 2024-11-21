@@ -7,6 +7,8 @@
     --link: #0066cc;
 }
 
+/* Desktop */
+
 header {
     position: absolute;
     z-index: 9999;
@@ -189,4 +191,101 @@ header nav ul li a svg {
     font-size: 17px;
     font-weight: 300;
     color: var(--link);
+}
+
+.h1-produto{
+    font-size: 28px;
+}
+
+.h1-produto span{
+    color: var(--link);
+}
+
+.caixa{
+    padding: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px #00000014;
+    box-sizing: border-box;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.text-center{
+    padding: 40px 8.33333%;
+}
+
+.text-center p{
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.text-center span{
+    color: var(--link);
+}
+
+.h1-facil{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.h1-facil span{
+    color: var(--link);
+}
+
+.caixa-flex{
+    padding: 40px 8.33333%;
+    gap: 50px;
+    display: flex;
+}
+
+.caixa-flex img{
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.caixa-flex p {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.caixa-flex span{
+    color: var(--link);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .produto{
+        padding: 40px 10%;
+    }
+
+    .div-banner img{
+        width: 200%;
+        margin-top: 70px;
+    }
+
+    .beneficios{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pop-up>div{
+        min-width: 0;
+        max-width: 90%;
+        max-height: 60%;
+    }
+
+    .caixa-flex{
+        display: block;
+    }
+
+    .caixa-flex img{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
 }
