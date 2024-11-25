@@ -13,6 +13,7 @@
 /* Desktop */
 
 body {
+    overflow-x: hidden;
     background-color: var(--bg-primary);
 }
 
@@ -49,6 +50,17 @@ header nav ul li a svg {
     font-size: 54px;
 }
 
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    transition: transform 0.5s ease-in-out;
+}
+
 .card-grid {
     margin-left: auto;
     margin-right: auto;
@@ -59,6 +71,12 @@ header nav ul li a svg {
     grid-row-gap: 24px;
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .card-suport {
@@ -99,6 +117,31 @@ header nav ul li a svg {
     font-size: 17px;
     font-weight: 300;
     color: var(--link);
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.prev {
+    top: 125px;
+    left: 10px;
+}
+
+button.prev svg, button.next svg{
+    border-radius: 40px;
+    background-color: #ccc;
+}
+
+button.next {
+    top: 125px;
+    right: 10px;
 }
 
 .section-color {
@@ -245,20 +288,49 @@ input[type=submit]:hover {
 
 @media (max-width: 768px) {
 
-    .div-banner img{
-        margin-top: 70px;
-        width: 150%;
+    .div-banner img {
+        margin-top: 10px;
+        width: 170%;
     }
 
-    .title-h1{
+    .title-h1 {
         font-size: 32px;
     }
 
-    .full{
+    .slider {
+        display: block;
+    }
+
+    .slides {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        padding: 0;
+        grid-row-gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        display: flex;
+        width: 100%;
+    }
+
+    .card-grid {
         display: none;
     }
 
-    .form-conteudo{
+    .card-suport a {
+        box-shadow: none;
+    }
+
+    .card-suport a:hover {
+        transform: none;
+    }
+    
+
+    .full {
+        display: none;
+    }
+
+    .form-conteudo {
         padding: 0px 0px;
     }
 

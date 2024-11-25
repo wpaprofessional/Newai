@@ -5,6 +5,7 @@
     --title-box: #6e6e73;
     --noticia-box: #1d1d1f;
     --data-box: #6e6e73;
+    --hamburguer: #ffffff;
 }
 
 /* Desktop */
@@ -304,6 +305,10 @@ input[type="text"] {
 
 @media (max-width: 768px) {
 
+    .hamburguer{
+        color: var(--hamburguer);
+    }
+
     .section-div {
         width: 100%;
     }
@@ -311,6 +316,12 @@ input[type="text"] {
     .historia {
         flex-flow: column;
         margin-inline-start: 0;
+    }
+
+    .historia-h1 {
+        padding: 0rem;
+        margin-left: 30px;
+        margin-bottom: 20px;
     }
 
     .historia-conteudo{

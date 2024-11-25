@@ -2,7 +2,8 @@
     :root {
         --text-button: #333336;
         --color-icon: #333336;
-        --background-menu-color: #f5f5f7; 
+        --background-menu-color: #f5f5f7;
+        --background-header-color: #ffffff; 
     }
 
     .search {
@@ -10,7 +11,18 @@
     }
 
     /* Header */
-    
+    header {
+        padding: 30px 0;
+        width: 100%;
+        position: relative;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .logo {
         display: flex;
@@ -45,10 +57,6 @@
     .hamburguer {
         display: block;
         cursor: pointer;
-    }
-
-    .hamburguer svg {
-        color: var(--color-icon);
     }
 
     @keyframes slideDown {
@@ -94,7 +102,6 @@
         z-index: 9999;
         padding-top: 60px;
         animation: slideDown 0.8s ease forwards; /* Aplica a animação */
-
     }
 
     .menu.responsive.hide {
@@ -136,25 +143,24 @@
 
     /* Corpo */
 
-    .inovacao-h1{
+    .inovacao-h1 {
         font-size: 32px;
     }
 
-    .inovacao-span{
+    .inovacao-span {
         font-size: 32px;
     }
 
-    .inovacao-text{
-        margin-top: 50px;
+    .inovacao-text {
+        margin-top: 10px;
     }
 
-    .inovacao-div{
+    .inovacao-div {
         margin-top: 280px;
         inset-inline-start: 10%;
     }
 
-    .card{
+    .card {
         margin-top: 150px;
     }
-    
 }

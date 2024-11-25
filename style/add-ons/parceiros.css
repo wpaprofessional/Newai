@@ -228,12 +228,8 @@
 
 @media (max-width: 768px) {
 
-  .hamburguer svg{
-    color: #ffffff;
-  }
-
   .parceiros-h1 {
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 48px;
   }
 

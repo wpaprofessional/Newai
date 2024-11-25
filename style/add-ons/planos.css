@@ -4,6 +4,7 @@
     --text-light: #ccc;
     --title-card: #000000;
     --button-title: #ffffff;
+    --hamburguer: #ffffff;
 }
 
 /* Desktop */
@@ -155,8 +156,8 @@ input[type="text"] {
         margin-bottom: 0px;
     }
 
-    .plano-container {
-        margin-top: 40px;
+    .hamburguer svg{
+        color: var(--hamburguer);
     }
 
     #diamont {

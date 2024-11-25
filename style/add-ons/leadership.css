@@ -3,6 +3,7 @@
     --title-color: #000000;
     --header-color: #000000cc;
     --text-light: #ccc;
+    --hamburguer: #ffffff;
 }
 
 /* Desktop */
@@ -99,8 +100,12 @@ input[type="text"] {
 
 @media (max-width: 768px) {
 
+    .hamburguer svg{
+        color: var(--hamburguer);
+    }
+
     .section-team {
-        margin-top: 70px;
+        margin-top: 10px;
     }
 
     .perfis-conteudo {  
