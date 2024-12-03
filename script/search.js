@@ -29,3 +29,11 @@ function verificarSugestao() {
         window.location.href = paginas[campoPesquisa];
     }
 }
+
+function fecharPesquisa() {
+    // Esconde o campo de pesquisa
+    document.getElementById('campo-pesquisa').style.display = 'none';
+
+    // Mostra o ícone de pesquisa
+    document.getElementById('icone-pesquisa').style.display = 'inline-block';
+}

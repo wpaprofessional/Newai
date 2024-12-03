@@ -25,7 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icone-newai-claro.png" type="image/x-icon">
 
 </head>
 
@@ -152,7 +152,7 @@
 
                     <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
                         name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
-                        style="display:none;">
+                        onblur="fecharPesquisa()" style="display:none;">
                     <datalist id="sugestoes">
                         <option value="Início">
                         <option value="Produto">
@@ -160,7 +160,8 @@
                         <option value="Parceiros">
                         <option value="Equipe">
                         <option value="Suporte">
-                            relogio-noticia.jpg                <option value="Sobre">
+                            relogio-noticia.jpg
+                        <option value="Sobre">
                     </datalist>
                 </li>
                 <div class="right-icons">
@@ -215,13 +216,18 @@
                         <div class="historia">
                             <div class="box-historia">
                                 <div class="historia-conteudo">
-                                    <h1>Estevan era o diretor executivo da complai, e tinha um projeto chamado mkati que
-                                        era um projeto de Marketing integrado com Ia, ele saiu da complai, vendeu 24% de
-                                        49% das ações da empresa, recebeu seu acerto como colaborador a 8 anos da
-                                        empresa, fez um financiamento com Cred sistem de 2 milhoes e meio com juros de 1
-                                        milhao e 300 no valor total de 3 milhoes e 800, luis hykavy CEO do banco por ter
-                                        um network com estevan aceitou a proposta desde entao temos uma parceria forme é
-                                        fundamentada com a CredSistem.
+                                    <h1>Janeiro de 2023: Estevan sai da Complai após 8 anos, vendendo 24% de suas ações
+                                        por R$ 1.200.000 e recebendo R$ 484.320 como acerto trabalhista.
+                                        Março de 2023: Com o capital inicial total de R$ 3.368.640, composto da soma:
+                                        Venda das Ações da Complai: R$ 1.200.000
+                                        Acerto Trabalhista: R$ 484.320
+                                        Financiamento CredSistem: R$ 1.200.000
+                                        Estevan funda a NewAi, lançando o projeto Mkati, um sistema de marketing
+                                        integrado com IA.
+                                        Junho de 2023: Lança as operações oficialmente e firma uma parceria estratégica
+                                        com o CredSistem, que financiou a empresa com um valor total de R$ 3.800.000 (R$
+                                        1.300.000 de juros).
+
                                     </h1>
                                     <img class="historia-img-mobile" src="./assets/banner-historia.png" alt="">
                                 </div>
@@ -287,13 +293,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <p>Ética</p>
-                                <p>Transparência</p>
                                 <p>Inovação</p>
-                                <p>Comunicação</p>
-                                <p>Trabalho em Equipe</p>
                                 <p>Tecnologia</p>
                                 <p>Atendimento ao Cliente</p>
+                                <p>Comunicação</p>
+                                <p>Transparência</p>
+                                <p>Ética</p>
+                                <p>Trabalho em Equipe</p>
                             </div>
                             <div class="box-identidade">
                                 <div class="flex">
@@ -458,7 +464,7 @@
                     <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
                         rel="noopener noreferrer">Politica de Venda</a>
                     <hr>
-                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                    <a class="flex-h1 mobile-flex" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
                         Legais</a>
                 </div>
             </div>

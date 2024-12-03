@@ -25,7 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icone-newai-claro.png" type="image/x-icon">
 
 </head>
 
@@ -152,7 +152,7 @@
 
                     <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
                         name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
-                        style="display:none;">
+                        onblur="fecharPesquisa()" style="display:none;">
                     <datalist id="sugestoes">
                         <option value="Início">
                         <option value="Produto">
@@ -242,9 +242,8 @@
                 <div class="plano" id="diamont">
                     <div class="flex-svg">
                         <h2>Diamont</h2>
-                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100px"
-                            height="48px" viewBox="0 0 1280.000000 815.000000"
-                            preserveAspectRatio="xMidYMid meet">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100px" height="48px"
+                            viewBox="0 0 1280.000000 815.000000" preserveAspectRatio="xMidYMid meet">
                             <metadata>
                                 Created by potrace 1.15, written by Peter Selinger 2001-2017
                             </metadata>
@@ -283,7 +282,7 @@ l-652 845 46 39 c209 179 315 387 315 617 0 172 -47 303 -159 442 -132 164
                             </g>
                         </svg>
                     </div>
-                    <p>Perfeito para negócios em crescimento que buscam desempenho.</p>
+                    <p>Projetado para grandes empresas com alta demanda.</p>
                     <ul>
                         <li>
                             Gestão Completa de Marketing:
@@ -318,7 +317,7 @@ l-652 845 46 39 c209 179 315 387 315 617 0 172 -47 303 -159 442 -132 164
 
                 <div class="plano" id="pro">
                     <h2>Pro</h2>
-                    <p>Projetado para grandes empresas com alta demanda.</p>
+                    <p>Perfeito para negócios em crescimento que buscam desempenho.</p>
                     <ul>
                         <li>
                             Gestão de Mídias Online Avançada:
@@ -378,7 +377,7 @@ l-652 845 46 39 c209 179 315 387 315 617 0 172 -47 303 -159 442 -132 164
                     <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
                         rel="noopener noreferrer">Politica de Venda</a>
                     <hr>
-                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                    <a class="flex-h1 mobile-flex" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
                         Legais</a>
                 </div>
             </div>

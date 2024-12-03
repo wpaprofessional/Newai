@@ -46,7 +46,7 @@ function validarFormulario() {
 }
 
 // Adicionando o evento ao botão de enviar
-document.querySelector(".form-conteudo").addEventListener("submit", function(event) {
+document.querySelector(".form-conteudo").addEventListener("submit", function (event) {
     // Impede o envio do formulário se a validação falhar
     if (!validarFormulario()) {
         event.preventDefault(); // Impede o envio do formulário

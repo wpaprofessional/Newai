@@ -22,7 +22,7 @@ header nav ul li a svg {
     fill: var(--text-light);
 }
 
-input[type="text"] {
+.input-buscar[type="text"] {
     color: #fff;
 }
 
@@ -86,7 +86,7 @@ input[type="text"] {
 }
 
 .historia-img img {
-    width: 125%;
+    width: 135%;
     height: 100%;
 }
 
@@ -305,7 +305,7 @@ input[type="text"] {
 
 @media (max-width: 768px) {
 
-    .hamburguer{
+    .hamburguer {
         color: var(--hamburguer);
     }
 
@@ -324,11 +324,11 @@ input[type="text"] {
         margin-bottom: 20px;
     }
 
-    .historia-conteudo{
+    .historia-conteudo {
         padding: 0;
     }
 
-    .historia-conteudo h1{
+    .historia-conteudo h1 {
         padding: 24px;
     }
 
@@ -347,25 +347,25 @@ input[type="text"] {
         width: 100%;
     }
 
-    .identidade{
+    .identidade {
         display: block;
         margin-inline-start: 0;
     }
 
-    .box-identidade{
+    .box-identidade {
         width: auto;
         margin-inline-end: 0;
     }
 
-    .section-noticia{
+    .section-noticia {
         margin-inline-start: 0;
     }
 
     #none-desktop {
-    display: block;
-}
+        display: block;
+    }
 
-    .none-mobile{
+    .none-mobile {
         display: none;
     }
 

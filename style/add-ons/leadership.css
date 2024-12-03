@@ -24,7 +24,7 @@ header nav ul li a svg {
     fill: var(--text-light);
 }
 
-input[type="text"] {
+.input-buscar[type="text"] {
     color: #fff;
 }
 
@@ -70,7 +70,22 @@ input[type="text"] {
 
 .perfis-conteudo div {
     margin-right: 18px;
-    margin-bottom: 28px;
+}
+
+.box {
+    margin: auto;
+    background: rgb(204, 204, 204);
+    background: linear-gradient(180deg, rgba(204, 204, 204, 1) 0%, rgba(255, 255, 255, 1) 50%);
+    box-shadow: 2px 4px 24px #00000014;
+    box-sizing: border-box;
+    align-items: center;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.box img {
+    width: 215px;
 }
 
 .perfis-conteudo a {
@@ -90,6 +105,7 @@ input[type="text"] {
 .perfis-conteudo h4 {
     font-size: 17px;
     font-weight: 400;
+    margin-bottom: 28px;
 }
 
 .perfis-conteudo a h4:hover {
@@ -100,7 +116,7 @@ input[type="text"] {
 
 @media (max-width: 768px) {
 
-    .hamburguer svg{
+    .hamburguer svg {
         color: var(--hamburguer);
     }
 
@@ -108,7 +124,7 @@ input[type="text"] {
         margin-top: 10px;
     }
 
-    .perfis-conteudo {  
+    .perfis-conteudo {
         margin-left: 0;
         align-items: center;
         justify-content: center;

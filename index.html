@@ -24,7 +24,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icone-newai-escuro.png" type="image/x-icon">
 
 </head>
 
@@ -151,7 +151,7 @@
 
                     <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
                         name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
-                        style="display:none;">
+                        onblur="fecharPesquisa()" style="display:none;">
                     <datalist id="sugestoes">
                         <option value="Início">
                         <option value="Produto">
@@ -240,12 +240,34 @@
                 <div class="card">
                     <img src="./assets/mundo.jpeg">
                 </div>
-                <section class="section">
-                    <h1 class="h1-veja">Veja agora!</h1>
-                    <div>
-                        
+                <div class="inovacao-text inovacao-div mobile-inovacao">
+                    <div class="ajuda">
+                        <img class="ajuda-img" src="./assets/suporte-icon.jpeg" alt="">
+                        <div>
+                            <h1 class="ajuda-h1">Precisa de ajuda para comprar?</h1>
+                            <a class="ajuda-a" href="suporte.html#formulario">Fale com nosso suporte</a>
+                        </div>
                     </div>
-                </section>
+                    <div class="visita">
+                        <img class="visita-img" src="./assets/local.png" alt="">
+                        <div>
+                            <h1 class="visita-h1">Visite a Newai</h1>
+                            <a class="visita-a" href="#" onclick="encontrarLoja()">Encontre uma Loja Newai</a>
+
+                            <script>
+                                function encontrarLoja() {
+                                    alert("Estamos em expansão! Em breve você encontrará uma loja Newai perto de você.");
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="conheca-h1">Conheça um pouco mais <a href="sobre.html">Sobre</a> Nós</h1>
+                <p class="conheca-p">Explore cada detalhe e descubra tudo o que a Newai tem a oferecer. Combinamos
+                    inovação, tecnologia e inteligência artificial para fornecer soluções que transformarão sua
+                    experiência. Navegue pelo nosso valioso site, aproveite os recursos exclusivos e conheça os serviços
+                    pensados ​​especialmente para atender às suas necessidades. Não perca a oportunidade de descobrir
+                    como podemos ajudar a impulsionar</p>
             </div>
         </section>
     </main>
@@ -274,7 +296,8 @@
                     <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
                         rel="noopener noreferrer">Politica de Venda</a>
                     <hr>
-                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                    <a class="flex-h1 mobile-flex" href="./pdf/Avisos Legais.pdf" target="_blank"
+                        rel="noopener noreferrer">Avisos
                         Legais</a>
                 </div>
             </div>

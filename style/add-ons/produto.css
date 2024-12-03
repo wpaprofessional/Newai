@@ -193,15 +193,15 @@ header nav ul li a svg {
     color: var(--link);
 }
 
-.h1-produto{
+.h1-produto {
     font-size: 28px;
 }
 
-.h1-produto span{
+.h1-produto span {
     color: var(--link);
 }
 
-.caixa{
+.caixa {
     padding: 0;
     margin: auto;
     background-color: #fff;
@@ -212,36 +212,36 @@ header nav ul li a svg {
     align-items: center;
 }
 
-.text-center{
+.text-center {
     padding: 40px 8.33333%;
 }
 
-.text-center p{
+.text-center p {
     font-size: 17px;
     font-weight: 300;
 }
 
-.text-center span{
+.text-center span {
     color: var(--link);
 }
 
-.h1-facil{
+.h1-facil {
     margin-top: 40px;
     text-align: center;
     font-size: 28px;
 }
 
-.h1-facil span{
+.h1-facil span {
     color: var(--link);
 }
 
-.caixa-flex{
+.caixa-flex {
     padding: 40px 8.33333%;
     gap: 50px;
     display: flex;
 }
 
-.caixa-flex img{
+.caixa-flex img {
     border-radius: 20px;
     max-width: 400px;
 }
@@ -251,7 +251,7 @@ header nav ul li a svg {
     font-weight: 300;
 }
 
-.caixa-flex span{
+.caixa-flex span {
     color: var(--link);
 }
 
@@ -259,30 +259,34 @@ header nav ul li a svg {
 
 @media (max-width: 768px) {
 
-    .produto{
+    .menu.responsive {
+        height: 300vh;
+    }
+
+    .produto {
         padding: 40px 10%;
     }
 
-    .div-banner img{
+    .div-banner img {
         width: 200%;
     }
 
-    .beneficios{
+    .beneficios {
         flex-direction: column;
         width: 100%;
     }
 
-    .pop-up>div{
+    .pop-up>div {
         min-width: 0;
         max-width: 90%;
-        max-height: 60%;
+        max-height: 80%;
     }
 
-    .caixa-flex{
+    .caixa-flex {
         display: block;
     }
 
-    .caixa-flex img{
+    .caixa-flex img {
         margin-bottom: 20px;
         width: 100%;
     }

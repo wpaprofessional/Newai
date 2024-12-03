@@ -25,7 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icone-newai-escuro.png" type="image/x-icon">
 
 </head>
 
@@ -152,7 +152,7 @@
 
                     <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
                         name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
-                        style="display:none;">
+                        onblur="fecharPesquisa()" style="display:none;">
                     <datalist id="sugestoes">
                         <option value="Início">
                         <option value="Produto">
@@ -361,7 +361,7 @@
                     <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
                         rel="noopener noreferrer">Politica de Venda</a>
                     <hr>
-                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                    <a class="flex-h1 mobile-flex" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
                         Legais</a>
                 </div>
             </div>

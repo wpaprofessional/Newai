@@ -36,57 +36,57 @@ body {
 }*/
 
 header nav ul {
-    margin: 0 auto;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 2rem;
+	margin: 0 auto;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0 2rem;
 }
 
 header nav ul li {
-    min-width: fit-content;
-    height: fit-content;
-    padding: 0 0.75rem;
-    font-size: small;
-    cursor: pointer;
-    list-style-type: none;
+	min-width: fit-content;
+	height: fit-content;
+	padding: 0 0.75rem;
+	font-size: small;
+	cursor: pointer;
+	list-style-type: none;
 }
 
 header nav ul li a {
-    text-decoration: none;
-    color: var(--text-light);
-    display: inline-block;
-    font-weight: 400;
+	text-decoration: none;
+	color: var(--text-light);
+	display: inline-block;
+	font-weight: 400;
 }
 
-.search{
+.search {
 	color: #1d1d1f;
 }
 
-.hamburguer{
+.hamburguer {
 	display: none;
 }
 
-.close-button{
+.close-button {
 	display: none;
 }
 
 .input-buscar[type="text"] {
-    cursor: text;
-    width: 100%;
-    height: 2rem;
-    padding: 12px 20px;
-    border-radius: 12px;
-    box-sizing: border-box;
-    border: 1px solid #86868b;
-    background-color: transparent;
-    font-size: 17px;
-    font-weight: 300;
+	cursor: text;
+	width: 100%;
+	height: 2rem;
+	padding: 12px 20px;
+	border-radius: 12px;
+	box-sizing: border-box;
+	border: 1px solid #86868b;
+	background-color: transparent;
+	font-size: 17px;
+	font-weight: 300;
 }
 
 .input-buscar {
-    display: none;
+	display: none;
 	margin-top: 7.7px;
 	margin-bottom: 7.7px;
 }
@@ -102,6 +102,10 @@ header nav ul li a {
 .inovacao-text {
 	border-radius: 20px;
 	margin-top: 25px;
+}
+
+.mobile-inovacao {
+	display: none;
 }
 
 .inovacao-div {
@@ -171,9 +175,22 @@ header nav ul li a {
 	width: 100%;
 }
 
-.h1-veja{
+.conheca-h1{
+	margin-top: 50px;
+	text-align: center;
 	font-size: 28px;
 	color: var(--title-primary-color);
+}
+
+.conheca-h1 a{
+	color: var(--link);
+}
+
+.conheca-p{
+	margin-top: 20px;
+	text-align: center;
+	font-size: 17px;
+	font-weight: 300;
 }
 
 .footer {

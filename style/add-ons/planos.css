@@ -21,7 +21,7 @@ header nav ul li a svg {
     fill: var(--text-light);
 }
 
-input[type="text"] {
+.input-buscar[type="text"] {
     color: #fff;
 }
 
@@ -56,7 +56,7 @@ input[type="text"] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#work{
+#work {
     background: #B91242;
 }
 
@@ -65,17 +65,17 @@ input[type="text"] {
     background: #1C2B33;
 }
 
-#pro{
+#pro {
     background: #0095C3;
 }
 
-.plano h2{
+.plano h2 {
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.flex-svg{
+.flex-svg {
     align-items: center;
     display: flex;
 }
@@ -86,7 +86,7 @@ input[type="text"] {
     margin-bottom: 10px;
 }
 
-.flex-svg svg{
+.flex-svg svg {
     margin-bottom: 10px;
     margin-left: 30px;
 }
@@ -108,8 +108,8 @@ input[type="text"] {
 }
 
 .plano .sublist {
-    margin-left: 20px; 
-    list-style-type: disc; 
+    margin-left: 20px;
+    list-style-type: disc;
 }
 
 .plano .sublist li {
@@ -118,16 +118,18 @@ input[type="text"] {
 }
 
 .plano .button-container {
-    margin-top: auto; /* Força o botão a ir para o final */
-    text-align: center; /* Centraliza horizontalmente */
+    margin-top: auto;
+    /* Força o botão a ir para o final */
+    text-align: center;
+    /* Centraliza horizontalmente */
 }
 
-.plano .medium{
-    margin-top: 32%;
+.plano .medium {
+    margin-top: 56%;
 }
 
-.plano .max{
-    margin-top: 70%;
+.plano .max {
+    margin-top: 82%;
 }
 
 .plano a {
@@ -156,7 +158,7 @@ input[type="text"] {
         margin-bottom: 0px;
     }
 
-    .hamburguer svg{
+    .hamburguer svg {
         color: var(--hamburguer);
     }
 

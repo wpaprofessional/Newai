@@ -220,7 +220,7 @@
   text-decoration: none;
 }
 
-.empresa-text button:hover a{
+.empresa-text button:hover a {
   color: inherit;
 }
 
@@ -253,13 +253,13 @@
   .carousel-track {
     animation: scroll 10s linear infinite;
   }
-  
+
 
   @keyframes scroll {
     0% {
       transform: translateX(-50%);
     }
-  
+
     100% {
       transform: translateX(0);
     }
@@ -269,7 +269,7 @@
     font-size: 20px;
   }
 
-  .empresa-text p{
+  .empresa-text p {
     font-size: 32px;
   }
 

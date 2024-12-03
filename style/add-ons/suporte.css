@@ -134,7 +134,8 @@ button.prev {
     left: 10px;
 }
 
-button.prev svg, button.next svg{
+button.prev svg,
+button.next svg {
     border-radius: 40px;
     background-color: #ccc;
 }
@@ -288,6 +289,10 @@ input[type=submit]:hover {
 
 @media (max-width: 768px) {
 
+    .menu.responsive {
+        height: 300vh;
+    }
+
     .div-banner img {
         margin-top: 10px;
         width: 170%;
@@ -324,7 +329,7 @@ input[type=submit]:hover {
     .card-suport a:hover {
         transform: none;
     }
-    
+
 
     .full {
         display: none;

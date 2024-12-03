@@ -25,7 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/icone-newai-claro.png">
 
 </head>
 
@@ -152,7 +152,7 @@
 
                     <input class="input-buscar" type="text" list="sugestoes" class="caixa-pesquisa" id="campo-pesquisa"
                         name="query" placeholder="Buscar no site" required oninput="verificarSugestao()"
-                        style="display:none;">
+                        onblur="fecharPesquisa()" style="display:none;">
                     <datalist id="sugestoes">
                         <option value="Início">
                         <option value="Produto">
@@ -222,54 +222,74 @@
                     <h1>Perfis de Executivos</h1>
                     <section class="perfis-conteudo">
                         <div>
-                            <a href="./pdf/Relatório CVO - Estevan.pdf" target="_blank" rel="noopener noreferrer"><img
-                                    src="./assets/wesley.png" alt="">
+                            <a href="./pdf/Relatório CVO - Estevan.pdf" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/Estevan.png" alt="">
+                                </div>
                                 <h3>Estevan</h3>
                             </a>
                             <h4>CVO</h4>
                         </div>
                         <div>
-                            <a href="./pdf/Relatório COO - Nathan.pdf" target="_blank" rel="noopener noreferrer"><img
-                                    src="./assets/wesley.png" alt="">
+                            <a href="./pdf/Relatório COO - Nathan.pdf" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/Nathan.png" alt="">
+                                </div>
                                 <h3>Nathan</h3>
                             </a>
                             <h4>COO</h4>
                         </div>
                         <div>
-                            <a href="./pdf/Relatório CIO - Wesley.pdf" target="_blank" rel="noopener noreferrer"><img
-                                    src="./assets/wesley.png" alt="">
+                            <a href="./pdf/Relatório CIO - Wesley.pdf" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/wesley.png" alt="">
+                                </div>
                                 <h3>Wesley</h3>
                             </a>
                             <h4>CIO</h4>
                         </div>
                         <div>
-                            <a href="" target="_blank" rel="noopener noreferrer"><img src="./assets/wesley.png" alt="">
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/Thomas.png" alt="">
+                                </div>
                                 <h3>Thomas</h3>
                             </a>
                             <h4>CMO</h4>
                         </div>
                         <div>
-                            <a href="" target="_blank" rel="noopener noreferrer"><img src="./assets/wesley.png" alt="">
+                            <a href="./pdf/Relatório CGO - Jaisy.pdf" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/equipe.png" alt="">
+                                </div>
                                 <h3>Jayse</h3>
                             </a>
                             <h4>CGO</h4>
                         </div>
                         <div>
                             <a href="https://www.canva.com/design/DAGScTSWE6Q/IBx4v4VsaH2Xvnp-ptRWEg/view?utm_content=DAGScTSWE6Q&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-                                target="_blank" rel="noopener noreferrer"><img src="./assets/wesley.png" alt="">
+                                target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/equipe.png" alt="">
+                                </div>
                                 <h3>Camila</h3>
                             </a>
                             <h4>CFO</h4>
                         </div>
                         <div>
-                            <a href="" target="_blank" rel="noopener noreferrer"><img src="./assets/wesley.png" alt="">
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/equipe.png" alt="">
+                                </div>
                                 <h3>Ester</h3>
                             </a>
                             <h4>CSO</h4>
                         </div>
                         <div>
-                            <a href="./pdf/Relatório CXO - Luis.pdf" target="_blank" rel="noopener noreferrer"><img
-                                    src="./assets/wesley.png" alt="">
+                            <a href="./pdf/Relatório CXO - Luis.pdf" target="_blank" rel="noopener noreferrer">
+                                <div class="box">
+                                    <img src="./assets/Luis.png" alt="">
+                                </div>
                                 <h3>Luis</h3>
                             </a>
                             <h4>CXO</h4>
@@ -304,7 +324,7 @@
                     <a class="flex-h1" href="./pdf/Politica de Venda.pdf" target="_blank"
                         rel="noopener noreferrer">Politica de Venda</a>
                     <hr>
-                    <a class="flex-h1" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
+                    <a class="flex-h1 mobile-flex" href="./pdf/Avisos Legais.pdf" target="_blank" rel="noopener noreferrer">Avisos
                         Legais</a>
                 </div>
             </div>

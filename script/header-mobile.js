@@ -20,7 +20,7 @@ function toggleMenu() {
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const vlibra = document.querySelector('.vlibra');
-    
+
     if (menu.classList.contains('responsive')) {
         menu.classList.add('hide');
         setTimeout(() => {
